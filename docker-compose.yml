@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+
+  golang:
+    build: ./
+    ports:
+      - '85:8080'
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+  
+  db:
+    image: mariadb
+    restart: always
+    volumes:
+      - ./dockDB:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: verylongpassword
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      
+
+  adminer:
+      image: adminer
+      restart: always
+      ports: 
+        - 90:8080
