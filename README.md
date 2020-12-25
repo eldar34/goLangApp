@@ -15,3 +15,15 @@ Run docker-compose command:
 docker-compose up --build
 ~~~
 
+Now you should be able to access the application through the following URL:
+
+~~~
+http://localhost:85/
+~~~
+
+Adminer for management database through the following URL:
+
+~~~
+http://localhost:90/
+~~~
+

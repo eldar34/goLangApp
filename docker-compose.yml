@@ -4,6 +4,7 @@ services:
 
   golang:
     build: ./
+    restart: always
     ports:
       - '85:8080'
     volumes:
